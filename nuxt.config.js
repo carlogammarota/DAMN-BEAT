@@ -15,18 +15,34 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat:500,600&amp;subset=cyrillic' }
+
     ]
   },
   /*
   ** Customize the progress bar color
   */
   loading: { color: instanceConfig.loadingColor },
-  modules: [ '@nuxtjs/moment' ],
-  plugins: [ '~/plugins/pluralize' ],
+  modules: [ '@nuxtjs/moment', 'bootstrap-vue/nuxt' ],  
+  plugins: [ '~/plugins/pluralize'],
+  // plugins: [ '~/plugins/pluralize', '~plugins/bootstrap.js'],
+
+    // include bootstrap css
+  // css: ['bootstrap/dist/css/bootstrap.css'],
+  
   /*
   ** Build configuration
   */
   build: {
+
+    // vendor: ['jquery', 'bootstrap'],
+    // plugins: [
+    //   // set shortcuts as global for bootstrap
+    //   new webpack.ProvidePlugin({
+    //     $: 'jquery',
+    //     jQuery: 'jquery',
+    //     'window.jQuery': 'jquery'
+    //   })
+    // ],
     /*
     ** Run ESLint on save
     */
