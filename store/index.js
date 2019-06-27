@@ -12,6 +12,7 @@ export const getters = {
 export const mutations = {
   setAuthor (state, author) {
     state.author = author
+    
   },
   setTrackDuration (state, { albumId, trackId, duration }) {
     const album = state.author.metadata.albums.find(album => album._id === albumId)
@@ -31,14 +32,17 @@ export const mutations = {
 
 export const actions = {
   async nuxtServerInit ({ commit }) {
+    
     const bucket = await getBucket()
     const response = await bucket.getObjects({
       type: 'authors',
       limit: 1,
       hide_metafields: true
     })
+    console.log(response)
     if (response.status !== 'empty') {
       const author = response.objects[0]
+      // console.log(author)
       commit('setAuthor', author)
     }
   }
