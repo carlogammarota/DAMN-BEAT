@@ -39,7 +39,13 @@ module.exports = {
     color: instanceConfig.loadingColor
   },
   modules: ['@nuxtjs/moment'],
-  plugins: ['~/plugins/pluralize'],
+  plugins: [ 
+    '~/plugins/pluralize',
+    '@/plugins/bootstrap',
+    '@/plugins/font-awesome'
+    // 'nuxt-fontawesome'
+
+  ],
   // plugins: [ '~/plugins/pluralize', '~plugins/bootstrap.js'],
 
   // include bootstrap css

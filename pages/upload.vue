@@ -10,7 +10,17 @@
         <!-- <button @click="sendFile(dataUpload)" >ENVIAR</button> -->
 
         <input type="file" @change="processFile($event)">
-        <!-- <button @click="sendFile()">send File</button> -->
+
+         <b-button v-b-modal.modal-1>Launch demo modal</b-button>
+
+        <b-modal id="modal-1" title="BootstrapVue">
+          <p class="my-4">Hello from modal!</p>
+        </b-modal>
+
+
+          <!-- <b-alert show variant="success"><a href="#" class="alert-link">Success Alert</a></b-alert>
+          <b-alert show variant="danger"><a href="#" class="alert-link">Danger Alert</a></b-alert> -->
+        <button @click="sendFile()">send File</button> -->
     </div>
 </template>
 
