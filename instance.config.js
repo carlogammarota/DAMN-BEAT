@@ -4,7 +4,7 @@ module.exports = {
   secondColorBG: '#1A1A1A',
   secondColorFG: '#FFFFFF',
   loadingColor: '#FFCC00',
-  slug: 'damn-vorterix',
-  read_key: 'VdDEoHKLRieAK3EAL7czzrOlSMZ58QF0vPO3rNistKKQe2hZlA',
-  write_key: 'gMD7kHJqvUuiEGlDJLpQsNKGVyZng6Ap7xkbRV5NvLhkui3KdK'
+  slug: 'damn-vorterix-1',
+  read_key: 'D11MHR2tVw3NUuCTPF8yVGJdAdUrHAwF1HdgayznOHXEyRA3hn',
+  write_key: 'Z6ky3bTAuWHEWi5HIYZUTuxkteWS6u1rY73qABeLt6LiIewh5O'
 }

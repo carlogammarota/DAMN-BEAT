@@ -3,35 +3,51 @@ const instanceConfig = require('./instance.config.js')
 module.exports = {
   env: instanceConfig,
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
     title: 'cosmicjs-music-site',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Personal music site with Nuxt and Cosmic JS' }
+    meta: [{
+        charset: 'utf-8'
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Personal music site with Nuxt and Cosmic JS'
+      }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat:500,600&amp;subset=cyrillic' }
+    link: [{
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Montserrat:500,600&amp;subset=cyrillic'
+      }
 
     ]
   },
   /*
-  ** Customize the progress bar color
-  */
-  loading: { color: instanceConfig.loadingColor },
-  modules: [ '@nuxtjs/moment', 'bootstrap-vue/nuxt' ],  
-  plugins: [ '~/plugins/pluralize'],
+   ** Customize the progress bar color
+   */
+  loading: {
+    color: instanceConfig.loadingColor
+  },
+  modules: ['@nuxtjs/moment'],
+  plugins: ['~/plugins/pluralize'],
   // plugins: [ '~/plugins/pluralize', '~plugins/bootstrap.js'],
 
-    // include bootstrap css
+  // include bootstrap css
   // css: ['bootstrap/dist/css/bootstrap.css'],
-  
+
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
 
     // vendor: ['jquery', 'bootstrap'],
@@ -44,9 +60,12 @@ module.exports = {
     //   })
     // ],
     /*
-    ** Run ESLint on save
-    */
-    extend (config, { isDev, isClient }) {
+     ** Run ESLint on save
+     */
+    extend(config, {
+      isDev,
+      isClient
+    }) {
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
@@ -61,16 +80,27 @@ module.exports = {
 
       config.module.rules.push({
         test: /\.svg$/,
-        use: [
-          { loader: 'svg-sprite-loader'},
+        use: [{
+            loader: 'svg-sprite-loader'
+          },
           {
             loader: 'svgo-loader',
             options: {
-              plugins: [
-                {removeTitle: true},
-                {convertColors: {shorthex: false, currentColor: true}},
-                {convertPathData: false},
-                {removeDimensions: false}
+              plugins: [{
+                  removeTitle: true
+                },
+                {
+                  convertColors: {
+                    shorthex: false,
+                    currentColor: true
+                  }
+                },
+                {
+                  convertPathData: false
+                },
+                {
+                  removeDimensions: false
+                }
               ]
             }
           }
@@ -79,4 +109,3 @@ module.exports = {
     }
   }
 }
-
