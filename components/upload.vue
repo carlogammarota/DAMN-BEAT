@@ -31,7 +31,7 @@ export default {
   data() {
     return {
       //Cambiar este slug para cambiar el album
-      slugAlbum: "extra-clean",
+      slugAlbum: "beats",
       someData: "",
       modalShow: false,
       uploading: false
