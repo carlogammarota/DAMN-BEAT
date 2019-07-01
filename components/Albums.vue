@@ -12,6 +12,7 @@
       .name {{ album.title }}
       .released {{ $moment(album.metadata.released_at).format('MMMM D, YYYY') }}
       .tracks-count(v-if='album.metadata.tracks') {{ album.metadata.tracks.length }} {{ 'track' | pluralize(album.metadata.tracks.length) }}
+
 </template>
 
 <script>

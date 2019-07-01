@@ -16,7 +16,9 @@
       <dropzone id="foo" ref="el" :options="options" @change="processFile($event)" :destroyDropzone="true"></dropzone>
       //- <b-button variant="outline-primary" @click="processFile($event)">Upload</b-button>
       <input type="file" @change="processFile($event)">
+      //- .data
       //- <font-awesome-icon icon="fas-AlignLeft" />
+      
       //- <font-awesome-icon :icon="['fas', 'spinner']" />
        <input type="file" @change="processFile($event)">
       //- <b-button v-b-modal.modal-multi-2>Open Second Modal</b-button>
@@ -41,7 +43,8 @@ export default {
       modalShow: false,
       options: {
         url: "http://httpbin.org/anything"
-      }
+      },
+      data: null
     };
   },
   name: 'menubar',
@@ -53,6 +56,7 @@ export default {
     Dropzone
   },
   computed: {
+    // ...mapGetters(['tracks']),
     ...mapState(['author']),
     style () {
       return {
@@ -66,6 +70,7 @@ export default {
   },
   methods: {
     async processFile(event) {
+      console.log("event", event)
       var bodyFormData = new FormData();
       let media = event.target.files[0];
       bodyFormData.append("media", media);
@@ -109,6 +114,7 @@ export default {
         config: { headers: { "Content-Type": "multipart/form-data" } }
       });
       console.log("beats", track);
+      this.data = track
       let track2 = track.data.object;
 
       console.log("track2", track2);
@@ -123,13 +129,15 @@ export default {
         config: { headers: { "Content-Type": "multipart/form-data" } }
       });
       console.log("beats", beats);
+
       let beat = beats.data.object;
       //   let metafields = beats.data.object.metafields;
       //   metafields[1].push(obj);
 
       //   console.log("metafields 1", beat.metafields[0].objects);
-      beat.metafields[0].objects.push(obj);
-      beat.metadata.tracks.push(obj);
+      console.log("obj", obj)
+      beat.metafields.objects.push(obj);
+      beat.metadata.tracks.value.push(obj);
       beat.title = "Cambio";
       console.log("new beat", {
         title: "nuevo titulo",
@@ -142,7 +150,15 @@ export default {
         data: {
           slug: beat.slug,
           title: "nuevo titulo",
-          metafields: beat.metafields
+          // metafields: beat.metafields
+          // metafields: beat.metafields
+          // metafields: beat.metafields
+          //  metafields: [{
+          //   key: 'album_id',
+          //   type: 'text',
+          //   value: this.album._id
+          // }],
+          // [{"object_type":"tracks","value":"5b688a165669b934036d93c0","key":"tracks","title":"Tracks","type":"objects","children":null}]
         }
       });
 
