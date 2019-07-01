@@ -13,7 +13,7 @@
     <b-button v-b-modal.modal-multi-1 variant="primary">Upload Audio</b-button>
     <b-modal id="modal-multi-1" size="lg" title="Subir Beat" no-stacking>
       <p class="my-2">El tamaño del archivo no debe superar los 50mb, los formatos aceptados son MP3 y Wav.</p>
-      <dropzone id="foo" ref="el" :options="options" @change="processFile($event)" :destroyDropzone="true"></dropzone>
+      //- <dropzone id="foo" ref="el" :options="options" @change="processFile($event)" :destroyDropzone="true"></dropzone>
       //- <b-button variant="outline-primary" @click="processFile($event)">Upload</b-button>
       <input type="file" @change="processFile($event)">
       //- .data
