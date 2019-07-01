@@ -5,8 +5,8 @@
     .title Discography
     albums
   section(v-if='author && (author.metadata.email || author.metadata.skype)')
-    .title Contact me
-    contacts
+    .title Upload Beat
+    //- contacts
     <br>
     //- <b-button v-b-modal.modal-1>Launch demo modal</b-button>
     //- <b-button v-b-modal.modal-1 variant="primary">Upload Audio</b-button>
