@@ -77,7 +77,7 @@ export default {
 
       let res = await axios({
         method: "post",
-        url: "https://api.cosmicjs.com/v1/damn-vorterix-1/media",
+        url: "https://api.cosmicjs.com/v1/damnvort/media",
         config: { headers: { "Content-Type": "multipart/form-data" } },
         data: bodyFormData
       });
@@ -89,7 +89,7 @@ export default {
       // /v1/:your-bucket-slug/add-object
       let res2 = await axios({
         method: "post",
-        url: "https://api.cosmicjs.com/v1/damn-vorterix-1/add-object",
+        url: "https://api.cosmicjs.com/v1/damnvort/add-object",
         config: { headers: { "Content-Type": "multipart/form-data" } },
         data: {
           title: "Nuevo Titulo 1",
@@ -110,7 +110,7 @@ export default {
       let track = await axios({
         method: "get",
         url:
-          "https://api.cosmicjs.com/v1/damn-vorterix-1/object/new-titulo-a4547010-993e-11e9-9880-2da09d6d4587",
+          "https://api.cosmicjs.com/v1/damnvort/object/new-titulo-a4547010-993e-11e9-9880-2da09d6d4587",
         config: { headers: { "Content-Type": "multipart/form-data" } }
       });
       console.log("beats", track);
@@ -125,7 +125,7 @@ export default {
       //https://api.cosmicjs.com/:bucket_slug/object/:slug
       let beats = await axios({
         method: "get",
-        url: "https://api.cosmicjs.com/v1/damn-vorterix-1/object/walter",
+        url: "https://api.cosmicjs.com/v1/damnvort/object/walter",
         config: { headers: { "Content-Type": "multipart/form-data" } }
       });
       console.log("beats", beats);
@@ -145,7 +145,7 @@ export default {
       });
       let res = await axios({
         method: "PUT",
-        url: "https://api.cosmicjs.com/v1/damn-vorterix-1/edit-object",
+        url: "https://api.cosmicjs.com/v1/damnvort/edit-object",
         config: { headers: { "Content-Type": "multipart/form-data" } },
         data: {
           slug: beat.slug,
